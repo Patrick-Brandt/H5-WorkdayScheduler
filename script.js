@@ -6,10 +6,4 @@ function clock() {
   
   setInterval(clock, 1000);
 
-  
-//Add new row
-var newRow = $("<tr>");
 
-$(".conatiner").append(newRow);
-
-newRow.attr("class","row");
