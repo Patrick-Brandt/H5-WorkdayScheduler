@@ -1,7 +1,8 @@
+var currentHourBlock = " "
 // This function prevents any jQuery code from running until the html document is finished loading.  
 $(document).ready(function() {
   console.log ("ready");
-     
+
   // This function shows day/date/time with seconds changing using moments.js. Time displays in <p id="currentDay">.
   function clock() {
       var changingTime = moment().format('MMMM Do YYYY, h:mm:ss a');
