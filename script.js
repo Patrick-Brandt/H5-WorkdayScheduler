@@ -1,4 +1,6 @@
-var currentHourBlock = " "
+var currentHourBlock = moment().hours(); 
+var timeBlock = //this needs to be the value of the "hour" attribute, I think.
+
 // This function prevents any jQuery code from running until the html document is finished loading.  
 $(document).ready(function() {
   console.log ("ready");
@@ -11,18 +13,29 @@ $(document).ready(function() {
     
     setInterval(clock, 1000);
 
-    /*need to assign value to time block, or make it a var.
-    function colorChange() {
-    if time block <changingTime then 
-     $("textarea").addClass("past");
-     else if time block  = changingTime then
-     $("textarea").addClass("present");
-     else if time block > changingTime, then
-     $("textarea").addClass("future");*/
+    // This will loop through my time blocks.
+    $(".time-block").each(function() {
+      console.log(this);
+      var currentHourBlock = parseInt($(this).attr("hour"))
+      console.log("hour:", currentHourBlock);
+  
+    })
+
+      //This function changes the color of the text area, using the "past, "present", and "future" css classes.
+      //Need to fix time-block
+      function colorChange() {
+      if ("time-block" < currentHourBlock) { 
+        $("textarea").addClass("past");
+        } else if ("time-block" === currentHourBlock) {
+        $("textarea").addClass("present");
+        } else if ("time-block" > currentHourBlock) {
+        $("textarea").addClass("future");
+        };
+      }
     
 
     /*To-do: Save function- this function will stand on its own.
-       parse local storage
+    
     localStorage.setItem ("key","value");
        for the code above maybe a timeblock name for the key, and value will be text from the text area?
     var saveText = $(".saveBtn");*/
