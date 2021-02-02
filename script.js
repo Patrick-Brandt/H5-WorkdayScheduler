@@ -18,6 +18,11 @@ $(document).ready(function() {
       console.log(this.id);
       var currentHourBlock = parseInt($(this).attr("hour"))
       console.log("hour:", currentHourBlock);
+      //add conditional that adds 12 to any time between 1 and 5.
+      if (momentsBlock >= 1 && momentsBlock <= 5) {
+        momentsBlock += 12;
+      }
+
       if (momentsBlock < currentHourBlock) { 
         $("textarea").addClass("past");
         } else if (momentsBlock === currentHourBlock) {
