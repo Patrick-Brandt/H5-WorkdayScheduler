@@ -1,6 +1,6 @@
 var currentHourBlock = moment().hours(); 
-var timeBlock = //this needs to be the value of the "hour" attribute, I think.
-
+var timeBlock = $("#8AM");//this needs to be the value of the "hour" attribute, I think.
+var saveText = $(".saveBtn");
 // This function prevents any jQuery code from running until the html document is finished loading.  
 $(document).ready(function() {
   console.log ("ready");
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     // This will loop through my time blocks.
     $(".time-block").each(function() {
-      console.log(this);
+      console.log(this.id);
       var currentHourBlock = parseInt($(this).attr("hour"))
       console.log("hour:", currentHourBlock);
   
@@ -37,11 +37,10 @@ $(document).ready(function() {
     /*To-do: Save function- this function will stand on its own.
     
     localStorage.setItem ("key","value");
-       for the code above maybe a timeblock name for the key, and value will be text from the text area?
-    var saveText = $(".saveBtn");*/
+       for the code above maybe a timeblock name for the key, and value will be text from the text area?*/
+    var saveText = $(".saveBtn");
 
-    /*Do I create vars with strings that contain the text entered in text area? 
-      Event objects will help me find out where things are occuring.*/
+      //Event objects will help me find out where things are occuring.*/
     $("#9AM").on("click", function(event) {
       console.log(event.currentTarget);
   });
