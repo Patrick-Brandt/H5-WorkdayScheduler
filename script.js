@@ -1,5 +1,5 @@
 var currentHourBlock = moment().hours(); 
-var timeBlock = $("#8AM");//this needs to be the value of the "hour" attribute, I think.
+var timeBlock =" ";//this needs to be the value of the "hour" attribute, I think.
 var saveText = $(".saveBtn");
 // This function prevents any jQuery code from running until the html document is finished loading.  
 $(document).ready(function() {
@@ -18,12 +18,6 @@ $(document).ready(function() {
       console.log(this.id);
       var currentHourBlock = parseInt($(this).attr("hour"))
       console.log("hour:", currentHourBlock);
-  
-    })
-
-      //This function changes the color of the text area, using the "past, "present", and "future" css classes.
-      //Need to fix time-block
-      function colorChange() {
       if ("time-block" < currentHourBlock) { 
         $("textarea").addClass("past");
         } else if ("time-block" === currentHourBlock) {
@@ -31,7 +25,14 @@ $(document).ready(function() {
         } else if ("time-block" > currentHourBlock) {
         $("textarea").addClass("future");
         };
-      }
+  
+    })
+
+      //This function changes the color of the text area, using the "past, "present", and "future" css classes.
+      //Need to fix time-block
+      /*function colorChange() {
+      I had a conditional statement here, but moved it inside of my loop. Will keep the function colorChange here until I am certain that was the right move.
+      }*/
     
 
     /*To-do: Save function- this function will stand on its own.
