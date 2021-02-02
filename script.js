@@ -1,5 +1,4 @@
-var momentsBlock = moment().hours(); 
-var timeBlock =" ";//this needs to be the value of the "hour" attribute, I think.
+var momentsBlock = moment().format("H");
 var saveText = $(".saveBtn");
 // This function prevents any jQuery code from running until the html document is finished loading.  
 $(document).ready(function() {
@@ -15,13 +14,15 @@ $(document).ready(function() {
 
     // This will loop through my time blocks.
     $(".time-block").each(function() {
-      console.log(this.id);
+      //console.log(this.id);
       var currentHourBlock = parseInt($(this).attr("hour"))
-      console.log("hour:", currentHourBlock);
+      //console.log("hour:", currentHourBlock);
       //add conditional that adds 12 to any time between 1 and 5.
       if (momentsBlock >= 1 && momentsBlock <= 5) {
         momentsBlock += 12;
+        
       }
+      console.log(momentsBlock, currentHourBlock);
 
       if (momentsBlock < currentHourBlock) { 
         $("textarea").addClass("past");
