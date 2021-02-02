@@ -24,12 +24,12 @@ $(document).ready(function() {
       }
       console.log(momentsBlock, currentHourBlock);
 
-      if (momentsBlock < currentHourBlock) { 
-        $("textarea").addClass("past");
-        } else if (momentsBlock === currentHourBlock) {
-        $("textarea").addClass("present");
-        } else if (momentsBlock > currentHourBlock) {
-        $("textarea").addClass("future");
+      if (momentsBlock > currentHourBlock) { 
+        $(this).addClass("past");
+        } else if (momentsBlock == currentHourBlock) {
+        $(this).addClass("present");
+        } else if (momentsBlock < currentHourBlock) {
+        $(this).addClass("future");
         };
   
     })
