@@ -1,4 +1,4 @@
-var currentHourBlock = moment().hours(); 
+var momentsBlock = moment().hours(); 
 var timeBlock =" ";//this needs to be the value of the "hour" attribute, I think.
 var saveText = $(".saveBtn");
 // This function prevents any jQuery code from running until the html document is finished loading.  
@@ -18,11 +18,11 @@ $(document).ready(function() {
       console.log(this.id);
       var currentHourBlock = parseInt($(this).attr("hour"))
       console.log("hour:", currentHourBlock);
-      if ("time-block" < currentHourBlock) { 
+      if (momentsBlock < currentHourBlock) { 
         $("textarea").addClass("past");
-        } else if ("time-block" === currentHourBlock) {
+        } else if (momentsBlock === currentHourBlock) {
         $("textarea").addClass("present");
-        } else if ("time-block" > currentHourBlock) {
+        } else if (momentsBlock > currentHourBlock) {
         $("textarea").addClass("future");
         };
   
