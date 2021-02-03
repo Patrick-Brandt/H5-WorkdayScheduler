@@ -1,5 +1,5 @@
 var momentsBlock = moment().format("H");
-var saveText = $(".saveBtn");
+
 // This function prevents any jQuery code from running until the html document is finished loading.  
 $(document).ready(function() {
   console.log ("ready");
@@ -11,6 +11,7 @@ $(document).ready(function() {
     }
     
     setInterval(clock, 1000);
+    render();
   });
 
     // This will loop through my time blocks.
@@ -39,14 +40,21 @@ $(document).ready(function() {
     
     localStorage.setItem ("key","value");
        for the code above maybe a timeblock name for the key, and value will be text from the text area?*/
-    var saveText = $(".saveBtn");
 
-      //Event objects will help me find out where things are occuring.*/
-    $("#9AM").on("click", function(event) {
-      console.log(event.currentTarget);
+      $(".saveBtn").click(function () {
+        var saveText = $(this).siblings(".description").val();
+        alert(saveText);
+        var hourClass = $(this).siblings(".hour").text();
+        localStorage.setItem(hourClass, JSON.stringify(saveText));
+        //there is a way to do this using 'this' to target each individual timeblock
+      });
+      
+      //render to screen-regular js function render. put inside of doc ready, but call it down here. look to quiz 
+        function render (){
+          
+        }
   
-
-}); 
+; 
 
 
   
