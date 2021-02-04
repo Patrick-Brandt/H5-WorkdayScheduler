@@ -10,7 +10,8 @@ $(document).ready(function() {
       $('#currentDay').html(changingTime);
     }
     setInterval(clock, 1000);
-    render();
+    // I'm calling the render function here, but it is written out at the bottom of the page.
+    saveTextArea();
   });
 
   // This will loop through my time blocks.
@@ -39,13 +40,14 @@ $(document).ready(function() {
     // This function saves text area info to local storage.
       $(".saveBtn").click(function () {
         var saveText = $(this).siblings(".description").val();
-        alert(saveText);
+        //This was used as a test when created save function: alert(saveText);
         var hourClass = $(this).siblings(".hour").text();
         localStorage.setItem(hourClass, JSON.stringify(saveText));
       });
       
-      //render to screen-regular js function render. put inside of doc ready, but call it down here.look to quiz 
-        function render (){
+      //Saves to text area after page is refreshed. 
+        function saveTextArea (){
+          localStorage.getItem(".hour") // Retrieve
           
         }
   
